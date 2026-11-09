@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><link rel="icon" href="data:,"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triagem de compras públicas</title>
+<style>
+:root {
+  --ink:#173540; --muted:#475f68; --teal:#076a5c; --line:#d4deda;
+  --paper:#f5f7f5; --white:#fff; --pale:#e7f2ed; --amber:#88491e;
+}
+* {box-sizing:border-box}
+body {margin:0; color:var(--ink); background:var(--paper); font:15px/1.45 "Inter","Segoe UI",Arial,sans-serif; font-variant-numeric:tabular-nums}
+main,footer {max-width:1420px; margin:auto; padding-inline:clamp(18px,3.4vw,52px)}
+h1,h2,p,dl {margin:0}
+h2 {font-size:20px; line-height:1.25; letter-spacing:-.025em; font-weight:650}
+a,.link {color:var(--teal); text-underline-offset:3px}
+button,input,select {font:inherit; color:inherit}
+button,select,summary {cursor:pointer}
+button {border:1px solid #b6c7c1; border-radius:5px; background:white; padding:6px 11px; font-size:13px; font-weight:600}
+button:disabled {opacity:.48; cursor:default}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible {outline:3px solid #ae541c; outline-offset:3px}
+.heading {display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:clamp(20px,3vw,40px) 0 16px}
+.heading h1 {font:600 clamp(30px,3.2vw,47px)/1.08 Baskerville,Georgia,serif; letter-spacing:-.035em}
+.period {font-size:14px; white-space:nowrap; color:var(--muted)}
+nav {display:flex; gap:18px; border-bottom:1px solid #bdcfc8}
+nav button {background:transparent; border:0; border-bottom:3px solid transparent; border-radius:0; padding:8px 0; color:var(--muted); font-size:14px}
+nav button[aria-pressed=true] {border-color:var(--teal); color:var(--teal)}
+.filters {display:grid; grid-template-columns:1.1fr 1.65fr .58fr .8fr 1.45fr auto; gap:12px; align-items:end; padding:16px 0}
+.filters label,.scenario label {display:grid; gap:4px; min-width:0; color:var(--muted); font-size:12px; font-weight:600}
+.filters select,.filters input,.controls-row select,.scenario select,.scenario input {width:100%; min-width:0; max-width:100%; height:35px; border:1px solid #b8c7c1; border-radius:4px; background:white; padding:4px 8px; font-size:13px; font-weight:400}
+.filters button {background:none; border:0; padding:7px 0; color:var(--teal); text-decoration:underline; text-underline-offset:3px}
+.kpis {display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); background:white; border-block:1px solid var(--line); margin:1px 0 16px; padding:12px 0}
+.stat {padding:0 16px; border-right:1px solid var(--line); min-width:0; display:flex; flex-direction:column; gap:1px}
+.stat:last-child {border-right:0}
+.stat .label {font-size:13px; color:var(--muted); font-weight:650}
+.stat strong {font-size:clamp(24px,2.5vw,37px); line-height:1.12; font-weight:650; letter-spacing:-.035em}
+.stat.accent strong {color:var(--teal)}
+.stat .hint,.micro,.cardnote {color:var(--muted); font-size:12px}
+.panels,.queue-grid {display:grid; align-items:start; gap:14px; margin-bottom:14px; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.queue-grid {grid-template-columns:minmax(0,2.15fr) minmax(260px,.9fr)}
+.panel,.method-panel {min-width:0; padding:17px 19px; background:white; border:1px solid var(--line); border-radius:6px}
+.panel h2 {margin-bottom:12px}
+.sub {color:var(--muted); font-size:13px; margin:-4px 0 12px}
+.toprow,.tablehead,.tablefoot,.controls-row {display:flex; align-items:center; gap:10px}
+.toprow,.tablehead,.tablefoot {justify-content:space-between}
+.toprow h2 {margin:0}
+.controls-row {margin:9px 0; color:var(--muted); font-size:12px}
+.controls-row select {width:auto; height:29px; font-size:12px}
+.tablewrap,.rtable {overflow:auto}
+.rtable {max-height:340px}
+.rtable thead {position:sticky; top:0}
+table {width:100%; border-collapse:collapse; font-size:13px}
+th,td {text-align:left; padding:8px 7px; border-bottom:1px solid #e0e6e3}
+th {font-weight:600; font-size:12px; color:var(--muted); background:#f1f5f2}
+.numeric {text-align:right; white-space:nowrap}
+.tablefoot {margin-top:12px; color:var(--muted); font-size:12px}
+.tablefoot button+button {margin-left:5px}
+.link {background:none; border:0; padding:0; font-weight:650; text-align:left; text-decoration:underline}
+td small {display:block; color:var(--muted)}
+.inst {max-width:230px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.reason {color:var(--amber); font-size:11px; font-weight:650}
+.rowbar {display:grid; grid-template-columns:minmax(90px,1fr) minmax(36px,1.15fr) 48px; gap:10px; align-items:center; margin:11px 0}
+.rowbar .name,.rowbar b {font-size:13px}
+.rowbar b {text-align:right}
+.band {height:8px; border-radius:2px; background:#eaf1ed; overflow:hidden}
+.bar {display:block; min-width:1px; height:100%; border-radius:2px; background:#358977}
+.coverage-bars .rowbar {grid-template-columns:minmax(140px,1.5fr) minmax(50px,1fr) 40px}
+.summarylist {list-style:none; margin:0; padding:0}
+.summarylist li {display:flex; justify-content:space-between; border-bottom:1px solid #e3ebe6; padding:6px 0; font-size:14px}
+.note {border-top:1px solid var(--line); margin-top:12px; padding-top:10px; color:var(--muted); font-size:13px}
+.details {margin-top:15px; padding-top:10px; border-top:1px solid var(--line); font-size:13px}
+.details summary,.method-panel summary {color:var(--teal); font-weight:650}
+.details p,.method-panel p {margin-top:8px; color:var(--muted)}
+.details dl {display:grid; grid-template-columns:auto 1fr; gap:5px 9px; margin-top:10px}
+.details dt {font-weight:650}
+.details dd {margin:0}
+.example {margin-top:13px}
+.method-panel {padding:13px 17px}
+.scenario {display:grid; grid-template-columns:minmax(0,1fr) 80px; gap:10px; margin:12px 0}
+.estimate {color:var(--teal); font-size:32px; line-height:1.15; font-weight:650; letter-spacing:-.035em}
+.empty {padding:18px 4px; font-size:14px; color:var(--muted)}
+footer {font-size:12px; color:var(--muted); padding-block:15px 26px}
+dialog {width:min(590px,92vw); max-height:86vh; overflow:auto; border:1px solid var(--line); border-radius:7px; padding:20px; color:var(--ink)}
+dialog::backdrop {background:#14313d72}
+dialog dl {display:grid; grid-template-columns:135px 1fr; gap:9px 12px; margin:14px 0 0; font-size:14px}
+dialog dt {color:var(--muted)}
+dialog dd {margin:0; overflow-wrap:anywhere; white-space:pre-line}
+@media(max-width:1020px) {
+  .queue-grid {grid-template-columns:minmax(0,1fr)}
+  .filters {grid-template-columns:1fr 1.4fr .6fr .8fr}
+  .filters label:last-of-type {grid-column:1/4}
+  .filters button {justify-self:start}
+}
+@media(max-width:700px) {
+  .heading {align-items:flex-start; flex-direction:column; gap:5px; padding:21px 0 10px}
+  .period {font-size:12px}
+  nav {gap:14px}
+  nav button {font-size:13px}
+  .filters {grid-template-columns:1fr 1.2fr; gap:7px 10px; padding:12px 0}
+  .filters label:last-of-type {grid-column:1}
+  .kpis {grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 0; padding:10px 0}
+  .stat {padding:0 10px}
+  .stat:nth-child(2) {border-right:0}
+  .panels {grid-template-columns:minmax(0,1fr)}
+  .panel {padding:13px}
+  .coverage-bars .rowbar {grid-template-columns:minmax(100px,1.4fr) minmax(35px,1fr) 35px}
+  .inst {max-width:150px}
+  dialog dl {grid-template-columns:90px 1fr}
+}
+</style></head>
+<body><main>
+<header class="heading"><h1>Triagem de compras públicas</h1><p class="period">Homologações de 2025</p></header>
+<nav aria-label="Vistas do painel"><button data-view="fila" aria-pressed="true">Fila de revisão</button><button data-view="cobertura" aria-pressed="false">Cobertura</button><button data-view="previsao" aria-pressed="false">Validação e previsão</button></nav>
+<div class="filters">
+<label>Família<select id="familia"><option value="">Todas as famílias</option></select></label>
+<label>Material<select id="material"><option value="">Todos os materiais</option></select></label>
+<label>UF<select id="uf"><option value="">Todas</option></select></label>
+<label>Esfera<select id="esfera"><option value="">Todas</option></select></label>
+<label>Objeto ou órgão<input id="busca" type="search" placeholder="Termo ou identificador"></label>
+<button id="limpar">Limpar filtros</button>
+</div><div id="conteudo"></div>
+</main><footer>Fonte: <a href="https://dadosabertos.compras.gov.br/swagger-ui/index.html" target="_blank" rel="noopener">Compras.gov.br</a> · Valores nominais em reais.</footer>
+<dialog id="ficha" aria-labelledby="ficha-titulo"><div class="tablehead"><h2 id="ficha-titulo">Detalhes do item</h2><button id="fechar">Fechar</button></div><dl id="fichaCampos"></dl></dialog>
+<script type="application/json" id="dados">__CARGA_JSON__</script><script>
+"use strict";
+const d=JSON.parse(document.querySelector("#dados").textContent), rows=d.rows, el=id=>document.getElementById(id);
+const fmt=new Intl.NumberFormat("pt-BR",{maximumFractionDigits:3}), brl=new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}), perc=new Intl.NumberFormat("pt-BR",{style:"percent",maximumFractionDigits:1});
+const valor=n=>Number.isFinite(n)?brl.format(Number(n.toFixed(8))):"—", numero=n=>Number.isFinite(n)?fmt.format(n):"—", pct=n=>Number.isFinite(n)?perc.format(n):"—";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const normalize=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const uniq=(a,k)=>new Set(a.map(r=>r[k]).filter(v=>v!==null&&v!==undefined&&v!=="")).size;
+const sum=a=>a.reduce((s,n)=>s+n,0),avg=a=>a.length?sum(a)/a.length:NaN, median=a=>{const s=a.filter(Number.isFinite).sort((x,y)=>x-y),n=s.length;return n?(s[Math.floor((n-1)/2)]+s[Math.floor(n/2)])/2:NaN;};
+const sinais={R1:"Preço",R2:"Lote",R3:"Recorrência"};
+const esferas={F:"Federal",E:"Estadual",M:"Municipal"};
+const blank='<p class="empty">Nenhum resultado atende aos filtros selecionados.</p>';
+const opt=(k,label)=>'<option value="'+esc(k)+'">'+esc(label)+'</option>';
+function options(key,base=rows){return [...new Set(base.map(r=>r[key]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),"pt-BR"));}
+function fillMaterials(){const before=el("material").value, family=el("familia").value;const mats=options("mat",family?rows.filter(r=>r.fam===family):rows);
+el("material").innerHTML=opt("","Todos os materiais")+mats.map(k=>opt(k,k)).join("");if(mats.includes(before))el("material").value=before;}
+function subset(){const f=el("familia").value,m=el("material").value,u=el("uf").value,e=el("esfera").value,search=normalize(el("busca").value.trim());return rows.filter(r=>(!f||r.fam===f)&&(!m||r.mat===m)&&(!u||r.uf===u)&&(!e||r.esf===e)&&(!search||normalize([r.obj,r.org,r.nome,r.compra,r.item].join(" ")).includes(search)));}
+function card(label, value, hint, accent=false) {
+    return `<div class="stat${accent ? " accent" : ""}"><span class="label">${label}</span><strong>${value}</strong>${hint ? `<span class="hint">${hint}</span>` : ""}</div>`;
+}
+function panel(title, body, caption="") {
+    return `<section class="panel"><h2>${title}</h2>${caption ? `<p class="sub">${caption}</p>` : ""}${body}</section>`;
+}
+const ordered=(a,k)=>[...a].sort((x,y)=>y[k]-x[k]||x.item.localeCompare(y.item));
+function bars(groups, style=""){const mx=Math.max(1,...groups.map(g=>g[1]));return '<div class="'+style+'">'+(groups.length?groups.map(([label,n])=>'<div class="rowbar"><span class="name">'+esc(label)+'</span><div class="band"><span class="bar" style="width:'+100*n/mx+'%"></span></div><b>'+numero(n)+'</b></div>').join(""):blank)+'</div>';}
+function counts(a,key){const m=new Map();a.forEach(r=>m.set(r[key],(m.get(r[key])||0)+1));return [...m.entries()].sort((a,b)=>b[1]-a[1]||String(a[0]).localeCompare(String(b[0])));}
+let view="fila",page=0,listing=[],allFiltered=[],order="pos",matrix=[];
+const size=5;
+function fila(a) {
+    const q = a.filter(r => r.flag);
+    listing = order === "pos" ? [...q].sort((x,y) => x.pos-y.pos) : ordered(q,order);
+    const altas = q.filter(r => r.pri === "Alta").length;
+    const criterios = `<details class="details"><summary>Critérios de prioridade</summary>
+        <dl><dt>Preço · R1</dt><dd>Preço acima da cerca superior histórica.</dd>
+        <dt>Lote · R2</dt><dd>Quantidade igual a um e menção de lote ou grupo no objeto.</dd>
+        <dt>Recorrência · R3</dt><dd>Outra compra do mesmo material e fornecedor pela mesma UASG nos 30 dias anteriores.</dd></dl>
+        <p>${esc(d.regra)}</p>
+        <p>A exposição multiplica a quantidade pela diferença positiva entre o preço observado e a referência. Confira no processo se as embalagens e os lotes são comparáveis.</p></details>`;
+    return `<div class="kpis">
+        ${card("Compras para revisar",numero(uniq(q,"compra")),numero(q.length)+" resultados sinalizados",true)}
+        ${card("Materiais na fila",numero(uniq(q,"mat")),numero(uniq(q,"fam"))+" famílias")}
+        ${card("Prioridade alta",numero(altas),"Dois ou mais sinais")}
+        ${card("Resultados examinados",numero(a.length),numero(uniq(a,"compra"))+" compras distintas")}
+        </div><div class="queue-grid"><section class="panel">
+        <div class="toprow"><h2>Itens sinalizados</h2><button id="download" ${q.length ? "" : "disabled"}>Baixar CSV</button></div>
+        <div class="controls-row"><label for="ordem">Ordenar por</label><select id="ordem">
+        <option value="pos">Prioridade</option><option value="impact">Maior exposição</option><option value="ratio">Maior razão de preço</option></select></div>
+        <div id="tabela"></div></section>
+        ${panel("Sinalizados por família",bars(counts(q,"fam"),"barsmall")+criterios+'<button class="example" id="caso">Abrir caso de paracetamol</button>')}</div>`;
+}
+function renderTable(){let start=page*size,part=listing.slice(start,start+size);
+if(!part.length){el("tabela").innerHTML=blank;return;}
+let trs=part.map((r,i)=>'<tr><td><button class="link idrow" data-row="'+(start+i)+'">'+esc(r.mat)+'</button><small class="inst" title="'+esc(r.org)+'">'+esc(r.uf)+' · '+esc(r.org||r.nome)+'</small><span class="reason">'+esc(r.pri)+' · '+esc(r.rules.map(k=>sinais[k]).join(" + "))+'</span></td><td class="numeric">'+valor(r.p)+'</td><td class="numeric">'+valor(r.ref)+'</td><td class="numeric">'+numero(r.ratio)+'×</td><td class="numeric"><strong>'+valor(r.impact)+'</strong></td></tr>').join("");
+el("tabela").innerHTML='<div class="tablewrap"><table><thead><tr><th>Material e órgão</th><th class="numeric">Observado</th><th class="numeric">Referência</th><th class="numeric">Razão</th><th class="numeric">Exposição</th></tr></thead><tbody>'+trs+'</tbody></table></div><div class="tablefoot"><span>'+numero(start+1)+'–'+numero(start+part.length)+' de '+numero(listing.length)+' resultados</span><div><button id="prev" '+(!page?"disabled":"")+'>Anterior</button><button id="next" '+(start+size>=listing.length?"disabled":"")+'>Próxima</button></div></div>';}
+function coverage(a) {
+    const q = a.filter(r => r.flag), compar = a.filter(r => Number.isFinite(r.ref));
+    const countsList = [
+        ["Com referência",compar.length],["Sem referência",a.length-compar.length],
+        ["Famílias",uniq(a,"fam")],["Unidades da Federação",uniq(a,"uf")],
+    ].map(([label,value]) => `<li><span>${label}</span><b>${numero(value)}</b></li>`).join("");
+    return `<div class="kpis">
+        ${card("Resultados",numero(a.length),"Pares de item e fornecedor",true)}
+        ${card("Compras distintas",numero(uniq(a,"compra")),numero(uniq(a,"uasg"))+" unidades compradoras")}
+        ${card("Grupos com referência",numero(uniq(compar,"cohort")),numero(uniq(a,"mat"))+" materiais examinados")}
+        ${card("Percentual sinalizado",pct(a.length ? q.length/a.length : NaN),numero(q.length)+" resultados")}
+        </div><div class="panels">
+        ${panel("Resultados por material",bars(counts(a,"mat"),"coverage-bars"))}
+        ${panel("Base de comparação",'<ul class="summarylist">'+countsList+'</ul><p class="note">'+esc(d.cobertura)+'</p>')}
+        </div>${panel("Detalhamento por apresentação",coverageTable(a))}`;
+}
+function coverageTable(a){if(!a.length)return blank;const entries=counts(a,"cohort");return '<div class="rtable"><table><thead><tr><th>Material</th><th>Apresentação</th><th class="numeric">Resultados</th><th class="numeric">Com referência</th><th class="numeric">Sinalizados</th></tr></thead><tbody>'+entries.map(([k,n])=>{const g=a.filter(r=>r.cohort===k),r=g[0];return '<tr><td>'+esc(r.mat)+'</td><td>'+esc(r.unit)+'</td><td class="numeric">'+numero(n)+'</td><td class="numeric">'+numero(g.filter(x=>Number.isFinite(x.ref)).length)+'</td><td class="numeric">'+numero(g.filter(x=>x.flag).length)+'</td></tr>';}).join("")+'</tbody></table></div>';}
+
+function validation(a){
+const t=a.filter(r=>r.eval&&Number.isFinite(r.err)&&Number.isFinite(r.errbase)),modelo=avg(t.map(r=>r.err)),base=avg(t.map(r=>r.errbase)),apes=t.filter(r=>r.p>0).map(r=>r.err/r.p);
+const groups=counts(t,"cohort"),matrix=groups.map(([k,n])=>{const g=t.filter(r=>r.cohort===k);return '<tr><td>'+esc(g[0].mat)+'</td><td>'+esc(g[0].unit)+'</td><td class="numeric">'+numero(n)+'</td><td class="numeric">'+valor(avg(g.map(r=>r.err)))+'</td><td class="numeric">'+valor(avg(g.map(r=>r.errbase)))+'</td></tr>';}).join("");
+const available=d.models.filter(m=>m.habilitado!==false).filter(m=>(!el("familia").value||m.familia===el("familia").value)&&(!el("material").value||m.material===el("material").value));
+const tabela = matrix ? `<div class="rtable"><table><thead><tr><th>Material</th><th>Apresentação</th>
+    <th class="numeric">Resultados</th><th class="numeric">Por volume</th><th class="numeric">Referência</th>
+    </tr></thead><tbody>${matrix}</tbody></table></div>` : blank;
+const opcoes = available.map(m => `<option ${String(m.catmat)==="451819" ? "selected " : ""}value="${d.models.indexOf(m)}">${esc(m.material+" · "+m.apresentacao)}</option>`).join("");
+const simulador = available.length ? `<div class="scenario"><label>Material e apresentação<select id="cenario">${opcoes}</select></label>
+    <label>Quantidade<input id="quant" type="number" min="1" step="1" value="30"></label></div>
+    <div id="simula" aria-live="polite"></div>` : '<p class="empty">Histórico insuficiente para este material.</p>';
+return `<div class="kpis">
+    ${card("Resultados no teste",numero(t.length),"Compras posteriores ao treino",true)}
+    ${card("Erro do modelo por volume",valor(modelo),"Média absoluta por unidade")}
+    ${card("Erro da referência simples",valor(base),"Mediana por apresentação")}
+    ${card("Erro percentual mediano",pct(median(apes)),"Desvio absoluto do modelo")}
+    </div><div class="panels">
+    ${panel("Erro por apresentação",tabela,"Erro absoluto médio por unidade comercial.")}
+    ${panel("Simular uma compra",simulador,"Referência em 1º de janeiro de 2026, com o histórico nacional de 2025.")}
+    </div><details class="method-panel"><summary>Como o modelo foi avaliado</summary>
+    <p>O treino de 2024 agrupa os preços por material e apresentação. O modelo prevê a mediana de cada faixa de quantidade e recorre à mediana do grupo quando a faixa tem menos de dez observações. A referência simples usa a mediana do grupo para qualquer quantidade.</p>
+    <p>O teste usa compras de 2025 ausentes do treino. O erro em reais reúne materiais com escalas de preço diferentes. UF, esfera e busca se aplicam ao teste. O simulador usa o histórico nacional do material escolhido.</p></details>`;
+}
+function simulate(){if(!el("cenario"))return;const q=Number(el("quant").value),m=d.models[Number(el("cenario").value)];if(!Number.isSafeInteger(q)||q<1){el("simula").innerHTML='<p class="note">Informe uma quantidade inteira positiva.</p>';return;}const idx=q<=m.cortes_volume[0]?0:q<=m.cortes_volume[1]?1:2,g=m.faixas[idx],v=Number(g.referencia);el("simula").innerHTML='<div class="estimate">'+valor(v)+'</div><div class="micro">por unidade · '+esc(m.apresentacao)+'</div><p class="note">Valor do lote <strong>'+valor(q*v)+'</strong><br>Volume '+esc(g.faixa.toLowerCase())+' · '+numero(g.n)+' resultados na faixa · '+numero(m.n)+' na apresentação.'+(g.fallback?' Referência recalculada pela mediana da apresentação.':'')+'</p>';}
+function render(){allFiltered=subset();page=0;document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.view===view)));el("conteudo").innerHTML=view==="fila"?fila(allFiltered):view==="cobertura"?coverage(allFiltered):validation(allFiltered);if(view==="fila"){el("ordem").value=order;renderTable();}if(view==="previsao")simulate();}
+function ficha(i){const r=listing[i],itens=[["Compra",r.compra],["Item",r.item],["Resultado",r.data.split("-").reverse().join("/")],["Órgão",r.org],["UASG",r.uasg+" · "+r.nome],["Localização",r.uf+" · "+(esferas[r.esf]||r.esf)],["Objeto da compra",r.obj||"Sem descrição"],["Fornecedor",r.forn+" (chave pseudonimizada)"],["CATMAT",r.cod+" · "+r.mat],["Apresentação",r.unit],["Quantidade",numero(r.q)],["Prioridade",r.pri+" · posição "+numero(r.pos)],["Regras acionadas",r.rules.map(x=>({R1:"R1 · preço acima da cerca histórica",R2:"R2 · quantidade 1 com indicação de lote/grupo no objeto",R3:"R3 · recorrência em outra compra dentro de 1–30 dias"}[x])).join("\n")],["Preço observado",valor(r.p)],["Referência",valor(r.ref)+" · volume "+r.faixa+" · histórico com "+numero(r.hist)+" resultados"],["Cerca superior de preço",valor(r.cap)],["Exposição indicativa",valor(r.impact)+" · diferença unitária positiva multiplicada pela quantidade"]];
+if(r.item==="1603320600054202500043")itens.push(["Conferência documental","O detalhe oficial do item registra a unidade “Comprimido” e descreve uma caixa com 20 comprimidos. Confira a base de faturamento nos autos."]);if(r.lastbuy)itens.push(["Compra anterior",r.lastbuy+" · resultado "+r.last]);
+let links="";if(r.fonte&&r.fonte.startsWith("https://dadosabertos.compras.gov.br/"))links+='<a target="_blank" rel="noopener" href="'+esc(r.fonte)+'">Consultar a fonte do preço</a><br>';
+const u="https://dadosabertos.compras.gov.br/modulo-contratacoes/2.1_consultarItensContratacoes_PNCP_14133_Id?tipo=idCompra&codigo="+encodeURIComponent(r.compra)+"&idCompraItem="+encodeURIComponent(r.item);
+links+='<a target="_blank" rel="noopener" href="'+esc(u)+'">Consultar o item no módulo da Lei 14.133</a><br><small>O módulo pode não trazer processos legados.</small>';
+el("fichaCampos").innerHTML=itens.map(([a,b])=>'<dt>'+esc(a)+'</dt><dd>'+esc(b)+'</dd>').join("")+'<dt>Verificação</dt><dd>'+links+'</dd>';el("ficha").showModal();}
+function download(){const keys=["pos","pri","rules","reason","compra","item","forn","data","cod","mat","fam","unit","uf","org","obj","q","p","ref","impact","lastbuy","last","fonte"],hdr=["posicao","prioridade","regras","motivos","id_compra","id_compra_item","fornecedor","data_resultado","catmat","material","familia","apresentacao","uf","orgao","objeto_compra","quantidade","preco_observado","referencia","exposicao_indicativa","compra_anterior","data_anterior","url_fonte"];const csv=[hdr,...listing.map(r=>keys.map(k=>Array.isArray(r[k])?r[k].join("+"):typeof r[k]==="number"?String(Number(r[k].toFixed(8))).replace(".",","):r[k]??""))].map(row=>row.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(";")).join("\r\n");const url=URL.createObjectURL(new Blob(["\uFEFF",csv],{type:"text/csv;charset=utf-8;"})),a=document.createElement("a");a.href=url;a.download="fila-de-revisao.csv";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+options("fam").forEach(k=>el("familia").add(new Option(k,k)));options("uf").forEach(k=>el("uf").add(new Option(k,k)));options("esf").forEach(k=>el("esfera").add(new Option(esferas[k]||k,k)));fillMaterials();["familia","material","uf","esfera"].forEach(id=>el(id).onchange=()=>{if(id==="familia")fillMaterials();render();});el("busca").oninput=render;el("limpar").onclick=()=>{["familia","material","uf","esfera","busca"].forEach(id=>el(id).value="");fillMaterials();render();};document.querySelector("nav").onclick=e=>{if(e.target.dataset.view){view=e.target.dataset.view;render();}};el("conteudo").onclick=e=>{if(e.target.dataset.row!==undefined)ficha(Number(e.target.dataset.row));if(e.target.id==="prev"||e.target.id==="next"){page+=e.target.id==="prev"?-1:1;renderTable();}if(e.target.id==="download")download();if(e.target.id==="caso"){["familia","material","uf","esfera"].forEach(id=>el(id).value="");fillMaterials();el("busca").value="1603320600054202500043";render();if(listing.length)ficha(0);}};el("conteudo").onchange=e=>{if(e.target.id==="cenario")simulate();if(e.target.id==="ordem"){order=e.target.value;render();}};el("conteudo").oninput=e=>{if(e.target.id==="quant")simulate();};el("fechar").onclick=()=>el("ficha").close();render();
+</script></body></html>

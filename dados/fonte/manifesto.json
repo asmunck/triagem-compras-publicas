@@ -1,0 +1,270 @@
+{
+  "coleta_utc": "2026-11-09T06:12:43.754974+00:00",
+  "endpoint": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial",
+  "periodo_por_data_resultado": [
+    2024,
+    2025
+  ],
+  "paginas": [
+    {
+      "catmat": "461889",
+      "pagina": 1,
+      "arquivo": "461889_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=461889&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 137,
+      "sha256_original": "8256412a6e4ac60e20f128a87f0df0f62d1545098d95f77121af5c25774ba772",
+      "sha256_gz": "76537f735f3247215baca7b613b3636e91e464fd106f9575023874a3d2ffeb66"
+    },
+    {
+      "catmat": "461889",
+      "pagina": 2,
+      "arquivo": "461889_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=461889&tamanhoPagina=500&pagina=2",
+      "n_original": 500,
+      "n_periodo": 500,
+      "sha256_original": "5cac72ca8268ab46099b1726ebe1832e43ca7cb2d7c12500d22330840a35ff91",
+      "sha256_gz": "6e87b8f5d285f077b981bee24c02c207ca3e728aeeb37037d343a9355a3ec83b"
+    },
+    {
+      "catmat": "461889",
+      "pagina": 3,
+      "arquivo": "461889_003.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=461889&tamanhoPagina=500&pagina=3",
+      "n_original": 500,
+      "n_periodo": 376,
+      "sha256_original": "a4f3a5589f34c2c335da14ee9b7e902db85e05628f445b09cbc82e85ce4f51ad",
+      "sha256_gz": "c58481715e1779d6389881f7cca85bb6e5719bccf57aa7c666b42a7e7b41cff0"
+    },
+    {
+      "catmat": "461889",
+      "pagina": 4,
+      "arquivo": "461889_004.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=461889&tamanhoPagina=500&pagina=4",
+      "n_original": 500,
+      "n_periodo": 0,
+      "sha256_original": "44debec4d7835fe06c0494c7f6be5fe0198a5c13c39af14c353f29656ca8fe58",
+      "sha256_gz": "68c6600630d67da25f83221387432c82734a192b6beb3a8a3bacacad2d5a6225"
+    },
+    {
+      "catmat": "461889",
+      "pagina": 5,
+      "arquivo": "461889_005.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=461889&tamanhoPagina=500&pagina=5",
+      "n_original": 5,
+      "n_periodo": 0,
+      "sha256_original": "b429291701b114ae9e2207fafbd6ee520d89b8626d9de9e7111ab21fa596f4e2",
+      "sha256_gz": "fd84508d885b60861e8f0e382ea3912aba7b5e197a229a1fe860afb50af18273"
+    },
+    {
+      "catmat": "462546",
+      "pagina": 1,
+      "arquivo": "462546_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=462546&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 333,
+      "sha256_original": "89c1392c9cbaf70e1f4f389b5a1670f77db7f3089df9bdaefad65df4c1757f21",
+      "sha256_gz": "cf69c29f0979f490b16c713347d081815068c2b4c7d4efc215bbbcc3b3eda61f"
+    },
+    {
+      "catmat": "462546",
+      "pagina": 2,
+      "arquivo": "462546_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=462546&tamanhoPagina=500&pagina=2",
+      "n_original": 500,
+      "n_periodo": 270,
+      "sha256_original": "4d4964006e853f753c0a06297a484de33e0417affc8b6790cfe405ea7f1882ea",
+      "sha256_gz": "50a75bb08ed5480df5ad802dbdc63f2d4136148c6bca96556a38f12fbf58fe95"
+    },
+    {
+      "catmat": "462546",
+      "pagina": 3,
+      "arquivo": "462546_003.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=462546&tamanhoPagina=500&pagina=3",
+      "n_original": 478,
+      "n_periodo": 0,
+      "sha256_original": "1deb4457db9e91b67a802a6ca69e1ab4ce0e1117cda5fe2680a8795493b8fc74",
+      "sha256_gz": "848cc1a87cb400716f02eb55515dbbbaa2904563c72a7e843e2442333cb1d0d2"
+    },
+    {
+      "catmat": "267778",
+      "pagina": 1,
+      "arquivo": "267778_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267778&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 287,
+      "sha256_original": "038452895bf06b1a70e159647ab66d139111b4a9f71f18ba8b115816c5e02e65",
+      "sha256_gz": "61dd145614f75df0a5e3c439cdc4e77e248a44023ea7c0646604c39263e71a58"
+    },
+    {
+      "catmat": "267778",
+      "pagina": 2,
+      "arquivo": "267778_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267778&tamanhoPagina=500&pagina=2",
+      "n_original": 500,
+      "n_periodo": 277,
+      "sha256_original": "8539cb32d6298615eb31cb53b62802f4111629b607e56aec89e946150abf8a5a",
+      "sha256_gz": "d0d3fbba21216d7aa0b456d2fbbf8bb075acb3d75fbf8236c262babb1994b103"
+    },
+    {
+      "catmat": "267778",
+      "pagina": 3,
+      "arquivo": "267778_003.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267778&tamanhoPagina=500&pagina=3",
+      "n_original": 385,
+      "n_periodo": 0,
+      "sha256_original": "23a65b76516957457c5547d1d11e26d43940ab0f87ddfd1513f73c93f9a1fd31",
+      "sha256_gz": "f006d65c9cf0378204bed053a39f3e0adaabbb1917bc6e80f1040f69317b999b"
+    },
+    {
+      "catmat": "267203",
+      "pagina": 1,
+      "arquivo": "267203_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267203&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 151,
+      "sha256_original": "77905fb1f067a885e99c4d1e9686024333ce6ba8282d1848ad79c0270165a640",
+      "sha256_gz": "435316b569bab301ed7ede35a3b2751ced653617f3be6b132bb3486c86053739"
+    },
+    {
+      "catmat": "267203",
+      "pagina": 2,
+      "arquivo": "267203_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267203&tamanhoPagina=500&pagina=2",
+      "n_original": 500,
+      "n_periodo": 500,
+      "sha256_original": "dbac6df5b1e78fb58491153dc6ee3aa6fe40920d9a73eb35c75ec61af4092f8e",
+      "sha256_gz": "f2eb507d5f2ebfa9500d8c62d47db7605d3f9535a56e3154526a2eb5d3a34d9a"
+    },
+    {
+      "catmat": "267203",
+      "pagina": 3,
+      "arquivo": "267203_003.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267203&tamanhoPagina=500&pagina=3",
+      "n_original": 500,
+      "n_periodo": 237,
+      "sha256_original": "fc252c323eb859ec5aee54374ae7612a4d8a78b500525950838ed315a0a02a54",
+      "sha256_gz": "441aa80f876d31bc7a403ab3f3d6063723c4811df54e56fb4cec47d2c85b62df"
+    },
+    {
+      "catmat": "267203",
+      "pagina": 4,
+      "arquivo": "267203_004.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267203&tamanhoPagina=500&pagina=4",
+      "n_original": 500,
+      "n_periodo": 0,
+      "sha256_original": "1a5e6a43a22c51673cdfc5a615912e5003d73da7ea08225227aa0ec48a683dc3",
+      "sha256_gz": "efdec13e3f3be7a57e6b4f4a48d389fb7da113d2068adcd52c7d0fd4ed4f4a30"
+    },
+    {
+      "catmat": "267203",
+      "pagina": 5,
+      "arquivo": "267203_005.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=267203&tamanhoPagina=500&pagina=5",
+      "n_original": 181,
+      "n_periodo": 0,
+      "sha256_original": "89605db622b2fb87ebeda12867e2bbdf06938f0c26d6ac26f55e86cebbe3dc82",
+      "sha256_gz": "a0019d72c7b9efaeae636c17f3c82c57545110e4b8d7924aa23f2d052177aab6"
+    },
+    {
+      "catmat": "451819",
+      "pagina": 1,
+      "arquivo": "451819_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=451819&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 262,
+      "sha256_original": "00fa743ec229f871b4c4223156c75055a6716c23ecd6b41135cfbdce9fd53dbc",
+      "sha256_gz": "0c3dc4ce4a96dfd0842b2bf0210a40a6233ee210feaec99e459e953c9b386d68"
+    },
+    {
+      "catmat": "451819",
+      "pagina": 2,
+      "arquivo": "451819_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=451819&tamanhoPagina=500&pagina=2",
+      "n_original": 49,
+      "n_periodo": 0,
+      "sha256_original": "fc6204d7b6a5d83ff0a58980c58cc4f9012327ffcaf286f4e987cae9163fd81e",
+      "sha256_gz": "68f877142c5c828b0e77d835f3a8c5cd5a13c2b59b6c06c5158980a99bc6590f"
+    },
+    {
+      "catmat": "462261",
+      "pagina": 1,
+      "arquivo": "462261_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=462261&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 263,
+      "sha256_original": "3ca00313405a70dec4c17059e08d23a1c937950e5126a3238aafa34215af2bd5",
+      "sha256_gz": "5062c2df3c32a20d4363d7c22f388a52977c5357ff8437f6330609038a2e5862"
+    },
+    {
+      "catmat": "462261",
+      "pagina": 2,
+      "arquivo": "462261_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=462261&tamanhoPagina=500&pagina=2",
+      "n_original": 85,
+      "n_periodo": 0,
+      "sha256_original": "1ae57d0784707d2b0326c3881ff1bf740ae1424ddcef6c9a3159f2a02aad9455",
+      "sha256_gz": "f11e7fcb8dc374ae652066b7088500f8f0c0d89bc35d6c183c69200a8986b4fe"
+    },
+    {
+      "catmat": "232589",
+      "pagina": 1,
+      "arquivo": "232589_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=232589&tamanhoPagina=500&pagina=1",
+      "n_original": 113,
+      "n_periodo": 54,
+      "sha256_original": "fbac9ace1a7194abf8122c585ec3c574c7d3f92623be4aed78e783ed64d29e18",
+      "sha256_gz": "b1ae5b87bffef32f2fa97d85ef4b18edeaaf6126c36392d805504bc9d31f200f"
+    },
+    {
+      "catmat": "299605",
+      "pagina": 1,
+      "arquivo": "299605_001.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=299605&tamanhoPagina=500&pagina=1",
+      "n_original": 500,
+      "n_periodo": 138,
+      "sha256_original": "b0b0cdd6cfc7216691978904c9ea8a28cea0762330aef2bd9724a180e2d02e0b",
+      "sha256_gz": "6df7e3fe6fa322570d2bfba53f53e6165ee7b627eb3f5fb147dd9c11b4da97ca"
+    },
+    {
+      "catmat": "299605",
+      "pagina": 2,
+      "arquivo": "299605_002.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=299605&tamanhoPagina=500&pagina=2",
+      "n_original": 500,
+      "n_periodo": 500,
+      "sha256_original": "068a727b6be512b805507fbfefa539c1b381a1901267237ac333e0e62a0560ac",
+      "sha256_gz": "79bb77c3ad85c33863534b2c1652ce8ba8477c68225cca765cfafb3bc3236a44"
+    },
+    {
+      "catmat": "299605",
+      "pagina": 3,
+      "arquivo": "299605_003.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=299605&tamanhoPagina=500&pagina=3",
+      "n_original": 500,
+      "n_periodo": 492,
+      "sha256_original": "b830e644a543fd0f162b6da83989adbbb53b7e4eabc10ebbc3639cc0a9559769",
+      "sha256_gz": "2a0a4a3c2cc464ba865fe2cc679875279f9f9bc4eb2f0196999b3919c1aac814"
+    },
+    {
+      "catmat": "299605",
+      "pagina": 4,
+      "arquivo": "299605_004.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=299605&tamanhoPagina=500&pagina=4",
+      "n_original": 500,
+      "n_periodo": 0,
+      "sha256_original": "7caedd40ada182bfd0de95541e30110b93285b54c6eaa1288777fd8d60ee6c1a",
+      "sha256_gz": "53043734a990df93932cde81edc0b40df6483e9833ae2c1afac099da1d2d6370"
+    },
+    {
+      "catmat": "299605",
+      "pagina": 5,
+      "arquivo": "299605_005.json.gz",
+      "url": "https://dadosabertos.compras.gov.br/modulo-pesquisa-preco/1_consultarMaterial?tipo=codigoItemCatalogo&codigo=299605&tamanhoPagina=500&pagina=5",
+      "n_original": 124,
+      "n_periodo": 0,
+      "sha256_original": "354837b9d6f06e69bb0129c17523d3e3f447226a01d5de60ba975b59ef972946",
+      "sha256_gz": "33d547690d1317c1fa81cfab30e4081c3ddff8d01df318859de87b6cfa106b59"
+    }
+  ]
+}

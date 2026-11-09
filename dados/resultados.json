@@ -1,0 +1,1059 @@
+{
+  "resumo": {
+    "coleta_utc": "2026-11-09T06:12:43.754974+00:00",
+    "n_materiais": 8,
+    "n_familias": 5,
+    "n_paginas": 26,
+    "n_origem": 10420,
+    "universo_2024": 2351,
+    "treino_com_suporte": 2057,
+    "universo_2025": 2426,
+    "comparaveis_2025": 2146,
+    "pendentes_2025": 280,
+    "n_ufs": 27,
+    "fila_n": 274,
+    "coortes_configuradas": 12,
+    "coortes_com_suporte": 11,
+    "compras_na_fila": 235,
+    "compras_sobrepostas_teste": 0,
+    "n_excluidos_teste_sobreposicao": 0,
+    "status": {
+      "Comparável": 2146,
+      "Apresentação fora do recorte": 275,
+      "Histórico insuficiente": 5
+    },
+    "prioridades": {
+      "Sem sinal": 1872,
+      "Média": 246,
+      "Pendente": 280,
+      "Contextual": 21,
+      "Alta": 7
+    },
+    "regras_na_fila": {
+      "R1": 253,
+      "R2": 4,
+      "R3": 24
+    },
+    "top20": {
+      "n": 20,
+      "materiais": 4,
+      "compras": 19,
+      "alta": 7
+    }
+  },
+  "avaliacao": {
+    "n": 2146,
+    "mae_modelo": 94.40595675675675,
+    "mae_baseline": 94.53773793103448,
+    "medae_modelo": 0.5,
+    "medae_baseline": 0.6025,
+    "medape_modelo_pct": 17.93481571733171,
+    "medape_baseline_pct": 18.3796875,
+    "melhora_mae_pct": 0.139395311503921
+  },
+  "por_material": [
+    {
+      "catmat": "461889",
+      "material": "Papel A4 branco 75 g/m²",
+      "familia": "Expediente",
+      "universo": 504,
+      "comparaveis": 478,
+      "fila": 69,
+      "avaliacao": {
+        "n": 478,
+        "mae_modelo": 97.50208054393305,
+        "mae_baseline": 97.77032322175732,
+        "medae_modelo": 2.155,
+        "medae_baseline": 1.94,
+        "medape_modelo_pct": 10.026455026455027,
+        "medape_baseline_pct": 9.894369600452038,
+        "melhora_mae_pct": 0.274360019467108
+      }
+    },
+    {
+      "catmat": "462546",
+      "material": "Caneta esferográfica azul",
+      "familia": "Expediente",
+      "universo": 300,
+      "comparaveis": 293,
+      "fila": 29,
+      "avaliacao": {
+        "n": 293,
+        "mae_modelo": 3.761073037542662,
+        "mae_baseline": 4.270919453924915,
+        "medae_modelo": 0.935,
+        "medae_baseline": 1.39,
+        "medape_modelo_pct": 26.25,
+        "medape_baseline_pct": 28.571428571428573,
+        "melhora_mae_pct": 11.937626590305067
+      }
+    },
+    {
+      "catmat": "267778",
+      "material": "Paracetamol 500 mg",
+      "familia": "Saúde",
+      "universo": 306,
+      "comparaveis": 301,
+      "fila": 37,
+      "avaliacao": {
+        "n": 301,
+        "mae_modelo": 446.5650375415282,
+        "mae_baseline": 446.56639634551493,
+        "medae_modelo": 0.02,
+        "medae_baseline": 0.02,
+        "medape_modelo_pct": 33.333333333333336,
+        "medape_baseline_pct": 33.333333333333336,
+        "melhora_mae_pct": 0.0003042781538939703
+      }
+    },
+    {
+      "catmat": "267203",
+      "material": "Dipirona sódica 500 mg",
+      "familia": "Saúde",
+      "universo": 490,
+      "comparaveis": 460,
+      "fila": 62,
+      "avaliacao": {
+        "n": 460,
+        "mae_modelo": 0.9055289130434783,
+        "mae_baseline": 0.914275,
+        "medae_modelo": 0.02,
+        "medae_baseline": 0.02685,
+        "medape_modelo_pct": 17.647058823529413,
+        "medape_baseline_pct": 19.40787080817633,
+        "melhora_mae_pct": 0.9566144711953996
+      }
+    },
+    {
+      "catmat": "451819",
+      "material": "Teclado multimídia USB com fio",
+      "familia": "Tecnologia",
+      "universo": 132,
+      "comparaveis": 132,
+      "fila": 17,
+      "avaliacao": {
+        "n": 132,
+        "mae_modelo": 19.923816666666667,
+        "mae_baseline": 19.993037878787877,
+        "medae_modelo": 4.2811,
+        "medae_baseline": 4.4,
+        "medape_modelo_pct": 20.36690249864204,
+        "medape_baseline_pct": 22.090409833003324,
+        "melhora_mae_pct": 0.346226584178356
+      }
+    },
+    {
+      "catmat": "462261",
+      "material": "Mouse USB com fio",
+      "familia": "Tecnologia",
+      "universo": 142,
+      "comparaveis": 142,
+      "fila": 21,
+      "avaliacao": {
+        "n": 142,
+        "mae_modelo": 119.13984436619718,
+        "mae_baseline": 118.96821056338028,
+        "medae_modelo": 4.4,
+        "medae_baseline": 3.9,
+        "medape_modelo_pct": 38.84525989820027,
+        "medape_baseline_pct": 39.902255639097746,
+        "melhora_mae_pct": -0.1442686260507075
+      }
+    },
+    {
+      "catmat": "232589",
+      "material": "Garrafa térmica plástica de 1 L",
+      "familia": "Copa",
+      "universo": 29,
+      "comparaveis": 29,
+      "fila": 8,
+      "avaliacao": {
+        "n": 29,
+        "mae_modelo": 4.45896551724138,
+        "mae_baseline": 4.397931034482759,
+        "medae_modelo": 3.99,
+        "medae_baseline": 3.99,
+        "medape_modelo_pct": 15.09433962264151,
+        "medape_baseline_pct": 16.644429619746496,
+        "melhora_mae_pct": -1.3877999059118709
+      }
+    },
+    {
+      "catmat": "299605",
+      "material": "Água sanitária 2–2,5%",
+      "familia": "Limpeza",
+      "universo": 523,
+      "comparaveis": 311,
+      "fila": 31,
+      "avaliacao": {
+        "n": 311,
+        "mae_modelo": 1.2137073954983923,
+        "mae_baseline": 1.2708456591639872,
+        "medae_modelo": 0.6,
+        "medae_baseline": 0.64,
+        "medape_modelo_pct": 15.950920245398773,
+        "medape_baseline_pct": 18.181818181818183,
+        "melhora_mae_pct": 4.496082057925325
+      }
+    }
+  ],
+  "modelos_2024": [
+    {
+      "catmat": "461889",
+      "familia": "Expediente",
+      "material": "Papel A4 branco 75 g/m²",
+      "apresentacao": "Embalagem de 500 folhas",
+      "n": 460,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        300.0,
+        1436.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 158,
+          "fallback": false,
+          "referencia": 23.265
+        },
+        {
+          "faixa": "Médio",
+          "n": 149,
+          "fallback": false,
+          "referencia": 20.8
+        },
+        {
+          "faixa": "Alto",
+          "n": 153,
+          "fallback": false,
+          "referencia": 20.1
+        }
+      ],
+      "baseline": 20.9,
+      "q1_preco": 19.635,
+      "q3_preco": 24.5,
+      "limite_superior": 31.7975
+    },
+    {
+      "catmat": "461889",
+      "familia": "Expediente",
+      "material": "Papel A4 branco 75 g/m²",
+      "apresentacao": "Embalagem de 100 folhas",
+      "n": 27,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        173.33333333333334,
+        1780.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 9,
+          "fallback": true,
+          "referencia": 5.25
+        },
+        {
+          "faixa": "Médio",
+          "n": 9,
+          "fallback": true,
+          "referencia": 5.25
+        },
+        {
+          "faixa": "Alto",
+          "n": 9,
+          "fallback": true,
+          "referencia": 5.25
+        }
+      ],
+      "baseline": 5.25,
+      "q1_preco": 5.23,
+      "q3_preco": 5.45,
+      "limite_superior": 5.78
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Unidade",
+      "n": 163,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        400.0,
+        2300.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 57,
+          "fallback": false,
+          "referencia": 1.1
+        },
+        {
+          "faixa": "Médio",
+          "n": 52,
+          "fallback": false,
+          "referencia": 0.795
+        },
+        {
+          "faixa": "Alto",
+          "n": 54,
+          "fallback": false,
+          "referencia": 0.505
+        }
+      ],
+      "baseline": 0.7,
+      "q1_preco": 0.53,
+      "q3_preco": 1.57,
+      "limite_superior": 3.13
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Caixa de 50 unidades",
+      "n": 134,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        10.0,
+        50.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 50,
+          "fallback": false,
+          "referencia": 34.515
+        },
+        {
+          "faixa": "Médio",
+          "n": 41,
+          "fallback": false,
+          "referencia": 26.55
+        },
+        {
+          "faixa": "Alto",
+          "n": 43,
+          "fallback": false,
+          "referencia": 26.0
+        }
+      ],
+      "baseline": 30.0,
+      "q1_preco": 25.485,
+      "q3_preco": 39.0,
+      "limite_superior": 59.2725
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Caixa de 12 unidades",
+      "n": 5,
+      "n_minimo": 20,
+      "habilitado": false,
+      "cortes_volume": [],
+      "faixas": [],
+      "baseline": null,
+      "q1_preco": null,
+      "q3_preco": null,
+      "limite_superior": null
+    },
+    {
+      "catmat": "267778",
+      "familia": "Saúde",
+      "material": "Paracetamol 500 mg",
+      "apresentacao": "Comprimido",
+      "n": 254,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        14666.666666666666,
+        140000.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 85,
+          "fallback": false,
+          "referencia": 0.11
+        },
+        {
+          "faixa": "Médio",
+          "n": 84,
+          "fallback": false,
+          "referencia": 0.08
+        },
+        {
+          "faixa": "Alto",
+          "n": 85,
+          "fallback": false,
+          "referencia": 0.07
+        }
+      ],
+      "baseline": 0.08,
+      "q1_preco": 0.07,
+      "q3_preco": 0.102475,
+      "limite_superior": 0.1511875
+    },
+    {
+      "catmat": "267203",
+      "familia": "Saúde",
+      "material": "Dipirona sódica 500 mg",
+      "apresentacao": "Comprimido",
+      "n": 375,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        7600.0,
+        120916.66666666667
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 125,
+          "fallback": false,
+          "referencia": 0.19
+        },
+        {
+          "faixa": "Médio",
+          "n": 125,
+          "fallback": false,
+          "referencia": 0.14
+        },
+        {
+          "faixa": "Alto",
+          "n": 125,
+          "fallback": false,
+          "referencia": 0.12
+        }
+      ],
+      "baseline": 0.14,
+      "q1_preco": 0.12,
+      "q3_preco": 0.17,
+      "limite_superior": 0.245
+    },
+    {
+      "catmat": "451819",
+      "familia": "Tecnologia",
+      "material": "Teclado multimídia USB com fio",
+      "apresentacao": "Unidade",
+      "n": 129,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        20.0,
+        60.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 46,
+          "fallback": false,
+          "referencia": 25.3011
+        },
+        {
+          "faixa": "Médio",
+          "n": 41,
+          "fallback": false,
+          "referencia": 22.0
+        },
+        {
+          "faixa": "Alto",
+          "n": 42,
+          "fallback": false,
+          "referencia": 20.735
+        }
+      ],
+      "baseline": 22.44,
+      "q1_preco": 18.49,
+      "q3_preco": 34.9,
+      "limite_superior": 59.515
+    },
+    {
+      "catmat": "462261",
+      "familia": "Tecnologia",
+      "material": "Mouse USB com fio",
+      "apresentacao": "Unidade",
+      "n": 121,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        20.0,
+        60.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 47,
+          "fallback": false,
+          "referencia": 11.4
+        },
+        {
+          "faixa": "Médio",
+          "n": 34,
+          "fallback": false,
+          "referencia": 8.945
+        },
+        {
+          "faixa": "Alto",
+          "n": 40,
+          "fallback": false,
+          "referencia": 7.27
+        }
+      ],
+      "baseline": 9.86,
+      "q1_preco": 7.0,
+      "q3_preco": 17.5,
+      "limite_superior": 33.25
+    },
+    {
+      "catmat": "232589",
+      "familia": "Copa",
+      "material": "Garrafa térmica plástica de 1 L",
+      "apresentacao": "Unidade",
+      "n": 25,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        67.0,
+        307.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 10,
+          "fallback": false,
+          "referencia": 24.4
+        },
+        {
+          "faixa": "Médio",
+          "n": 7,
+          "fallback": true,
+          "referencia": 24.99
+        },
+        {
+          "faixa": "Alto",
+          "n": 8,
+          "fallback": true,
+          "referencia": 24.99
+        }
+      ],
+      "baseline": 24.99,
+      "q1_preco": 22.0,
+      "q3_preco": 27.0,
+      "limite_superior": 34.5
+    },
+    {
+      "catmat": "299605",
+      "familia": "Limpeza",
+      "material": "Água sanitária 2–2,5%",
+      "apresentacao": "Frasco de 1 litro",
+      "n": 161,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        253.33333333333334,
+        2066.6666666666665
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 54,
+          "fallback": false,
+          "referencia": 2.195
+        },
+        {
+          "faixa": "Médio",
+          "n": 53,
+          "fallback": false,
+          "referencia": 1.89
+        },
+        {
+          "faixa": "Alto",
+          "n": 54,
+          "fallback": false,
+          "referencia": 1.78
+        }
+      ],
+      "baseline": 1.95,
+      "q1_preco": 1.69,
+      "q3_preco": 2.41,
+      "limite_superior": 3.49
+    },
+    {
+      "catmat": "299605",
+      "familia": "Limpeza",
+      "material": "Água sanitária 2–2,5%",
+      "apresentacao": "Garrafa de 5 litros",
+      "n": 208,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        200.0,
+        600.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 85,
+          "fallback": false,
+          "referencia": 6.5
+        },
+        {
+          "faixa": "Médio",
+          "n": 59,
+          "fallback": false,
+          "referencia": 5.38
+        },
+        {
+          "faixa": "Alto",
+          "n": 64,
+          "fallback": false,
+          "referencia": 6.29
+        }
+      ],
+      "baseline": 5.915,
+      "q1_preco": 5.06,
+      "q3_preco": 7.5425,
+      "limite_superior": 11.26625
+    }
+  ],
+  "modelos_2025": [
+    {
+      "catmat": "461889",
+      "familia": "Expediente",
+      "material": "Papel A4 branco 75 g/m²",
+      "apresentacao": "Embalagem de 500 folhas",
+      "n": 454,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        250.0,
+        1467.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 157,
+          "fallback": false,
+          "referencia": 25.0
+        },
+        {
+          "faixa": "Médio",
+          "n": 146,
+          "fallback": false,
+          "referencia": 20.95
+        },
+        {
+          "faixa": "Alto",
+          "n": 151,
+          "fallback": false,
+          "referencia": 20.18
+        }
+      ],
+      "baseline": 21.49,
+      "q1_preco": 19.7425,
+      "q3_preco": 25.4525,
+      "limite_superior": 34.0175
+    },
+    {
+      "catmat": "461889",
+      "familia": "Expediente",
+      "material": "Papel A4 branco 75 g/m²",
+      "apresentacao": "Embalagem de 100 folhas",
+      "n": 24,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        445.6666666666667,
+        2154.6666666666665
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 8,
+          "fallback": true,
+          "referencia": 5.29
+        },
+        {
+          "faixa": "Médio",
+          "n": 8,
+          "fallback": true,
+          "referencia": 5.29
+        },
+        {
+          "faixa": "Alto",
+          "n": 8,
+          "fallback": true,
+          "referencia": 5.29
+        }
+      ],
+      "baseline": 5.29,
+      "q1_preco": 5.1625,
+      "q3_preco": 6.11,
+      "limite_superior": 7.53125
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Unidade",
+      "n": 174,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        400.0,
+        2000.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 59,
+          "fallback": false,
+          "referencia": 1.26
+        },
+        {
+          "faixa": "Médio",
+          "n": 61,
+          "fallback": false,
+          "referencia": 0.73
+        },
+        {
+          "faixa": "Alto",
+          "n": 54,
+          "fallback": false,
+          "referencia": 0.585
+        }
+      ],
+      "baseline": 0.9,
+      "q1_preco": 0.5225,
+      "q3_preco": 2.0975,
+      "limite_superior": 4.46
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Caixa de 50 unidades",
+      "n": 119,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        10.0,
+        116.66666666666667
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 44,
+          "fallback": false,
+          "referencia": 34.0
+        },
+        {
+          "faixa": "Médio",
+          "n": 35,
+          "fallback": false,
+          "referencia": 26.79
+        },
+        {
+          "faixa": "Alto",
+          "n": 40,
+          "fallback": false,
+          "referencia": 26.0
+        }
+      ],
+      "baseline": 27.15,
+      "q1_preco": 25.245,
+      "q3_preco": 33.39,
+      "limite_superior": 45.6075
+    },
+    {
+      "catmat": "462546",
+      "familia": "Expediente",
+      "material": "Caneta esferográfica azul",
+      "apresentacao": "Caixa de 12 unidades",
+      "n": 5,
+      "n_minimo": 20,
+      "habilitado": false,
+      "cortes_volume": [],
+      "faixas": [],
+      "baseline": null,
+      "q1_preco": null,
+      "q3_preco": null,
+      "limite_superior": null
+    },
+    {
+      "catmat": "267778",
+      "familia": "Saúde",
+      "material": "Paracetamol 500 mg",
+      "apresentacao": "Comprimido",
+      "n": 301,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        10000.0,
+        90000.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 106,
+          "fallback": false,
+          "referencia": 0.09
+        },
+        {
+          "faixa": "Médio",
+          "n": 95,
+          "fallback": false,
+          "referencia": 0.07
+        },
+        {
+          "faixa": "Alto",
+          "n": 100,
+          "fallback": false,
+          "referencia": 0.06
+        }
+      ],
+      "baseline": 0.07,
+      "q1_preco": 0.06,
+      "q3_preco": 0.084,
+      "limite_superior": 0.12
+    },
+    {
+      "catmat": "267203",
+      "familia": "Saúde",
+      "material": "Dipirona sódica 500 mg",
+      "apresentacao": "Comprimido",
+      "n": 460,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        6000.0,
+        100000.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 156,
+          "fallback": false,
+          "referencia": 0.19
+        },
+        {
+          "faixa": "Médio",
+          "n": 155,
+          "fallback": false,
+          "referencia": 0.13
+        },
+        {
+          "faixa": "Alto",
+          "n": 149,
+          "fallback": false,
+          "referencia": 0.1138
+        }
+      ],
+      "baseline": 0.13095,
+      "q1_preco": 0.11415,
+      "q3_preco": 0.17,
+      "limite_superior": 0.253775
+    },
+    {
+      "catmat": "451819",
+      "familia": "Tecnologia",
+      "material": "Teclado multimídia USB com fio",
+      "apresentacao": "Unidade",
+      "n": 132,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        30.0,
+        103.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 52,
+          "fallback": false,
+          "referencia": 25.52
+        },
+        {
+          "faixa": "Médio",
+          "n": 36,
+          "fallback": false,
+          "referencia": 25.0
+        },
+        {
+          "faixa": "Alto",
+          "n": 44,
+          "fallback": false,
+          "referencia": 20.6
+        }
+      ],
+      "baseline": 23.9,
+      "q1_preco": 20.0,
+      "q3_preco": 38.0,
+      "limite_superior": 65.0
+    },
+    {
+      "catmat": "462261",
+      "familia": "Tecnologia",
+      "material": "Mouse USB com fio",
+      "apresentacao": "Unidade",
+      "n": 142,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        20.0,
+        74.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 54,
+          "fallback": false,
+          "referencia": 12.5
+        },
+        {
+          "faixa": "Médio",
+          "n": 41,
+          "fallback": false,
+          "referencia": 14.5033
+        },
+        {
+          "faixa": "Alto",
+          "n": 47,
+          "fallback": false,
+          "referencia": 10.65
+        }
+      ],
+      "baseline": 12.695,
+      "q1_preco": 7.935,
+      "q3_preco": 22.1675,
+      "limite_superior": 43.51625
+    },
+    {
+      "catmat": "232589",
+      "familia": "Copa",
+      "material": "Garrafa térmica plástica de 1 L",
+      "apresentacao": "Unidade",
+      "n": 29,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        97.33333333333333,
+        160.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 10,
+          "fallback": false,
+          "referencia": 28.03
+        },
+        {
+          "faixa": "Médio",
+          "n": 9,
+          "fallback": true,
+          "referencia": 25.2
+        },
+        {
+          "faixa": "Alto",
+          "n": 10,
+          "fallback": false,
+          "referencia": 23.49
+        }
+      ],
+      "baseline": 25.2,
+      "q1_preco": 22.0,
+      "q3_preco": 29.99,
+      "limite_superior": 41.975
+    },
+    {
+      "catmat": "299605",
+      "familia": "Limpeza",
+      "material": "Água sanitária 2–2,5%",
+      "apresentacao": "Frasco de 1 litro",
+      "n": 148,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        300.0,
+        1600.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 50,
+          "fallback": false,
+          "referencia": 2.205
+        },
+        {
+          "faixa": "Médio",
+          "n": 49,
+          "fallback": false,
+          "referencia": 1.97
+        },
+        {
+          "faixa": "Alto",
+          "n": 49,
+          "fallback": false,
+          "referencia": 1.75
+        }
+      ],
+      "baseline": 1.93,
+      "q1_preco": 1.7375,
+      "q3_preco": 2.4225,
+      "limite_superior": 3.45
+    },
+    {
+      "catmat": "299605",
+      "familia": "Limpeza",
+      "material": "Água sanitária 2–2,5%",
+      "apresentacao": "Garrafa de 5 litros",
+      "n": 163,
+      "n_minimo": 20,
+      "habilitado": true,
+      "cortes_volume": [
+        200.0,
+        800.0
+      ],
+      "faixas": [
+        {
+          "faixa": "Baixo",
+          "n": 56,
+          "fallback": false,
+          "referencia": 7.23
+        },
+        {
+          "faixa": "Médio",
+          "n": 57,
+          "fallback": false,
+          "referencia": 5.68
+        },
+        {
+          "faixa": "Alto",
+          "n": 50,
+          "fallback": false,
+          "referencia": 5.525
+        }
+      ],
+      "baseline": 6.2,
+      "q1_preco": 5.1,
+      "q3_preco": 7.575,
+      "limite_superior": 11.2875
+    }
+  ],
+  "cenario": {
+    "data_simulada": "2026-01-01",
+    "treino_ano": 2025,
+    "catmat": "451819",
+    "material": "Teclado multimídia USB com fio",
+    "apresentacao": "Unidade",
+    "quantidade": 30,
+    "faixa_volume": "Baixo",
+    "referencia": 25.52,
+    "total": 765.6
+  }
+}

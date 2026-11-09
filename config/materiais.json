@@ -1,0 +1,15 @@
+{
+  "historico_minimo": 20,
+  "faixa_minima": 10,
+  "janela_recorrencia_dias": 30,
+  "materiais": [
+    {"catmat":"461889","material":"Papel A4 branco 75 g/m²","familia":"Expediente","apresentacoes":[["EMB",500,"FL","Embalagem de 500 folhas"],["EMB",100,"FL","Embalagem de 100 folhas"]]},
+    {"catmat":"462546","material":"Caneta esferográfica azul","familia":"Expediente","apresentacoes":[["UN",0,null,"Unidade"],["CX",50,"UN","Caixa de 50 unidades"],["CX",12,"UN","Caixa de 12 unidades"]]},
+    {"catmat":"267778","material":"Paracetamol 500 mg","familia":"Saúde","apresentacoes":[["COMPR",0,null,"Comprimido"]]},
+    {"catmat":"267203","material":"Dipirona sódica 500 mg","familia":"Saúde","apresentacoes":[["COMPR",0,null,"Comprimido"]]},
+    {"catmat":"451819","material":"Teclado multimídia USB com fio","familia":"Tecnologia","apresentacoes":[["UN",0,null,"Unidade"]]},
+    {"catmat":"462261","material":"Mouse USB com fio","familia":"Tecnologia","apresentacoes":[["UN",0,null,"Unidade"]]},
+    {"catmat":"232589","material":"Garrafa térmica plástica de 1 L","familia":"Copa","apresentacoes":[["UN",0,null,"Unidade"]]},
+    {"catmat":"299605","material":"Água sanitária 2–2,5%","familia":"Limpeza","apresentacoes":[["FR",1,"L","Frasco de 1 litro"],["GRF",5,"L","Garrafa de 5 litros"]]}
+  ]
+}
